@@ -30,42 +30,42 @@ function App() {
 function App(props) {
   return (
     <>
-      <div className = "header">
-        <img src = "/images/UW.png" className ="App-logo" alt="UW logo" />
+      <div className="header">
+        <img src="/images/UW.png" className="App-logo" alt="UW logo" />
         <h1> UWaterloo Course Query</h1>
       </div>
 
-        <Router>
-          <div>
-            <nav>
-              <ul>
+      <Router>
+        <div>
+          <nav>
+            <ul>
               <li>
-                  <Link to="/Home">Home</Link>
-                </li>
-                <li>
-                  <Link to="/courses">Courses</Link>
-                </li>
-                <li>
-                  <Link to="/locations">Locations</Link>
-                </li>
-              </ul>
-            </nav>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/courses">Courses</Link>
+              </li>
+              <li>
+                <Link to="/locations">Locations</Link>
+              </li>
+            </ul>
+          </nav>
 
-            {/* A <Switch> looks through its children <Route>s and
+          {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
-            <Switch>
-              <Route path="/Home">
-                <Home />
-              </Route>
-              <Route path="/courses">
-                <CourseList />
-              </Route>
-              <Route path="/locations">
-                <LocationList />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
+          <Switch>
+            <Route path="/courses">
+              <CourseList />
+            </Route>
+            <Route path="/locations">
+              <LocationList />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }
