@@ -1,4 +1,6 @@
 import React from "react";
+import CourseListItem from "./CourseListItem.js";
+import AddCourse from "./AddCourse.js";
 
 export default class CourseList extends React.Component() {
   constructor(props) {
@@ -6,12 +8,56 @@ export default class CourseList extends React.Component() {
     this.state = {
       courses: [],
       keyId: 0,
+      newDoctor: [],
     };
   }
 
-  renderDoctors() {}
+  renderCourses() {
+    console.log(this.state.courses);
+    return this.state.courses.map((course) => (
+      <CourseListItem
+        key={this.state.keyId + 1}
+        id={course.courseId}
+        subject={course.subjectCode}
+        catalog={course.catalogNumber}
+        title={course.title}
+      />
+    ));
+  }
+
+  handleAddCourse(name) {
+    name = name.replace(/\s/g, "");
+    var nameArr = name.split(/(\d+)/);
+
+    fetch(
+      `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`
+    )
+      .then((response) => response.json())
+      .then((result) => this.setState({ newDoctor: result }));
+
+    if (this.state.newDoctor == null) {
+      console.err("Course Invalid");
+    } else {
+      const newCourseList = [...this.state.courses, this.state.newDoctor];
+      this.setState({ courses: newCourseList });
+    }
+  }
+
+  handelDeleteDoctor(id) {
+    console.log(`TODO: Delete course with id ${id}`);
+    const newCourseList = this.state.courses.filter(
+      (course) => course.id !== id
+    );
+    this.setState({ courses: newCourseList });
+  }
 
   render() {
-    return <h2>Courses List</h2>;
+    return (
+      <>
+        <h2>Course List</h2>
+        <AddCourse onAddCourse={(name) => this.handleAddCourse(name)} />
+        {this.renderCourses()}
+      </>
+    );
   }
 }
