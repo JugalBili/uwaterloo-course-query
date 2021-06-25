@@ -4,7 +4,6 @@ import AddCourse from "./AddCourse.js";
 
 require("dotenv").config({ path: "../../.env" });
 var KEY = process.env.REACT_APP_API_KEY;
-//console.log(KEY);
 
 export default class CourseList extends React.Component {
   constructor(props) {
