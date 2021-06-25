@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import CourseList from "./components/CourseList.js";
 import LocationList from "./components/LocationList.js";
+import Home from "./components/Home.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 /*
@@ -36,10 +37,10 @@ function App(props) {
           <nav>
             <ul>
               <li>
-                <Link to="/">Courses</Link>
+                <Link to="/courses">Courses</Link>
               </li>
               <li>
-                <Link to="/doctors">Locations</Link>
+                <Link to="/locations">Locations</Link>
               </li>
             </ul>
           </nav>
@@ -47,6 +48,9 @@ function App(props) {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
             <Route path="/courses">
               <CourseList />
             </Route>
