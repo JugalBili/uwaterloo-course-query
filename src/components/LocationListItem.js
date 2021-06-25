@@ -8,11 +8,15 @@ const LocationListItem = ({location}) => {
     }
     return (
         <div>
-            <a href='#' onClick={handleLoadLocations}>
+            <button onClick={handleLoadLocations}>
                 {location.buildingName}
-            </a>
+            </button>
             {showName ?
-            <h3>{location.buildingCode}</h3> :
+                <ul>
+                    <li>Building Code: {location.buildingCode}</li>
+                    <li>Latitude: {location.latitude}</li>
+                    <li>Longitude: {location.longitude}</li>
+                </ul> :
             null
         }
 
