@@ -26,23 +26,72 @@
   text-align: center;
 } */
 
-.header{
-  width : 100%;
-  height: 100px;
-  display: table;
+.header {
+  width: 100%;
+  height: fit-content;
   background-color: black;
+  /*border: 2px solid green;*/
 }
 
-.header h1{
-  color:white;
-  height: 100%;
-  text-align: center;
+.header .title {
+  display: inline-block;
+  width: fit-content;
+  /*border: 2px solid red;*/
+  padding: 10px 10px;
 }
 
-.header img{
-  float: left;
+.header .title h1 {
+  display: inline-block;
+  color: white;
+  /*border: 2px solid blue;*/
+  margin: 20px 20px;
+  font-size: 32px;
+  color: gold;
+}
+
+.header ul {
+  position: relative;
+  float: right;
+  color: gold;
+  display: inline-block;
+  font-size: 20px;
+  /*border: 2px solid purple;*/
+  list-style: square;
+  width: fit-content;
+  margin: 30px 100px;
+}
+
+.header li {
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 0 40px;
+  border-right: 2px solid gold;
+}
+
+.header .border-left {
+  border-left: 2px solid gold;
+}
+
+.header .links {
+  text-decoration: none;
+  color: gold;
+}
+
+.header .links:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.header .links:active {
+  text-decoration: none;
+  color: red;
+}
+
+.header .title img {
+  display: inline-block;
   width: 100px;
   height: 100px;
+  margin: 10px 10px;
   vertical-align: middle;
 }
 
@@ -60,4 +109,3 @@
 .App-link {
   color: #61dafb;
 }
-

@@ -30,23 +30,33 @@ function App() {
 function App(props) {
   return (
     <>
-      <div className="header">
+      {/* <div className="header">
         <img src="/images/UW.png" className="App-logo" alt="UW logo" />
         <h1> UWaterloo Course Query</h1>
-      </div>
+      </div> */}
 
       <Router>
         <div>
-          <nav>
+          <nav className="header">
+            <div className="title">
+              <img src="/images/UW.png" className="App-logo" alt="UW logo" />
+              <h1> UWaterloo Course Query</h1>
+            </div>
             <ul>
-              <li>
-                <Link to="/">Home</Link>
+              <li className="border-left">
+                <Link to="/" className="links">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/courses">Courses</Link>
+                <Link to="/courses" className="links">
+                  Courses
+                </Link>
               </li>
               <li>
-                <Link to="/locations">Locations</Link>
+                <Link to="/locations" className="links">
+                  Locations
+                </Link>
               </li>
             </ul>
           </nav>
