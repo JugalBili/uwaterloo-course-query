@@ -36,12 +36,6 @@ function App(props) {
         <h1> UWaterloo Course Query</h1>
       </div>
 
-      {/* Navbar */ }
-
-      <div>
-        <button type = "button" className ="navbar-toggler" data-toggle = "collapse" data-target = "#navbarcollapse">
-          <span className = "navbar-toggler-icon"></span>
-        </button>
         <Router>
           <div>
             <nav>
@@ -70,7 +64,6 @@ function App(props) {
             </Switch>
           </div>
         </Router>
-      </div>
     </>
   );
 }
