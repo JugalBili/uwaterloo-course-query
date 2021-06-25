@@ -2,6 +2,10 @@ import React from "react";
 import CourseListItem from "./CourseListItem.js";
 import AddCourse from "./AddCourse.js";
 
+require("dotenv").config();
+var KEY = process.env.API_KEY.toString();
+console.log(KEY);
+
 export default class CourseList extends React.Component() {
   constructor(props) {
     super(props);
@@ -30,7 +34,12 @@ export default class CourseList extends React.Component() {
     var nameArr = name.split(/(\d+)/);
 
     fetch(
-      `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`
+      `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
+      {
+        headers: {
+          "x-api-key": KEY,
+        },
+      }
     )
       .then((response) => response.json())
       .then((result) => this.setState({ newDoctor: result }));
