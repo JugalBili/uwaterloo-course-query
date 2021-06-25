@@ -2,8 +2,8 @@ import React from "react";
 import CourseListItem from "./CourseListItem.js";
 import AddCourse from "./AddCourse.js";
 
-require("dotenv").config();
-var KEY = process.env.API_KEY;
+require("dotenv").config({ path: "../../.env" });
+var KEY = process.env.REACT_APP_API_KEY;
 console.log(KEY);
 
 export default class CourseList extends React.Component {
@@ -37,7 +37,7 @@ export default class CourseList extends React.Component {
       `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
       {
         headers: {
-          "x-api-key": "B705DBD8436C40549510F8704F02DDD6",
+          "x-api-key": `${KEY}`,
         },
       }
     )
@@ -62,11 +62,11 @@ export default class CourseList extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="Courses">
         <h2>Course List</h2>
         <AddCourse onAddCourse={(name) => this.handleAddCourse(name)} />
         {this.renderCourses()}
-      </>
+      </div>
     );
   }
 }
