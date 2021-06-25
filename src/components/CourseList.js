@@ -3,10 +3,10 @@ import CourseListItem from "./CourseListItem.js";
 import AddCourse from "./AddCourse.js";
 
 require("dotenv").config();
-var KEY = process.env.API_KEY.toString();
+var KEY = process.env.API_KEY;
 console.log(KEY);
 
-export default class CourseList extends React.Component() {
+export default class CourseList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ export default class CourseList extends React.Component() {
       `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
       {
         headers: {
-          "x-api-key": KEY,
+          "x-api-key": "B705DBD8436C40549510F8704F02DDD6",
         },
       }
     )
