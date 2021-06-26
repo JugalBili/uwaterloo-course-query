@@ -38,15 +38,17 @@
   width: fit-content;
   /*border: 2px solid red;*/
   padding: 10px 10px;
+  vertical-align: middle;
 }
 
 .header .title h1 {
   display: inline-block;
-  color: white;
+
   /*border: 2px solid blue;*/
-  margin: 20px 20px;
+  margin: 20px ;
   font-size: 32px;
   color: gold;
+  vertical-align: middle;
 }
 
 .header ul {
@@ -58,33 +60,39 @@
   /*border: 2px solid purple;*/
   list-style: square;
   width: fit-content;
-  margin: 30px 100px;
+  margin: 50px 50px;
+  vertical-align: middle;
 }
 
 .header li {
   display: inline-block;
   margin: 10px 0px;
-  padding: 0 40px;
-  border-right: 2px solid gold;
+  padding: 0 30px;
+  /* border-right: 2px solid gold; */
+  vertical-align: middle;
 }
-
+/* 
 .header .border-left {
   border-left: 2px solid gold;
-}
+  vertical-align: middle;
+} */
 
 .header .links {
   text-decoration: none;
   color: gold;
+  vertical-align: middle;
 }
 
 .header .links:hover {
   text-decoration: none;
   color: white;
+  vertical-align: middle;
 }
 
 .header .links:active {
   text-decoration: none;
   color: red;
+  vertical-align: middle;
 }
 
 .header .title img {
@@ -93,6 +101,70 @@
   height: 100px;
   margin: 10px 10px;
   vertical-align: middle;
+}
+
+.toggle-button{
+  position: absolute;
+  top:4rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+  vertical-align: middle;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: gold;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+
+
+.location-buttons{
+  background-color: black;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color:gold;
+}
+
+@media (max-width: 1095px) {
+  .toggle-button{
+    display: flex;
+  }
+  .header .links{
+    width:100%;
+  }
+  .header {
+    align-items: flex-start;
+    display: table;
+  }
+  .header ul{
+    width: 100%;
+    display: grid;
+    text-align: left;
+  }
+  .header li{
+    text-align: left;
+    padding: 0rem 3.5rem;
+  }
+  .header li a{
+    padding:  .5rem 1rem;
+  }
+
+  .header.links:active {
+    display: flex;
+  }
+}
+
+@media (max-width: 570px){
+  .header .title h1 {
+    display: none;
+  }
 }
 
 .App-header {

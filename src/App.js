@@ -1,7 +1,9 @@
+import React, {useState} from 'react';
 import "./App.css";
 import CourseList from "./components/CourseList";
 import LocationList from "./components/LocationList";
 import Home from "./components/Home.js";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 /*
@@ -27,7 +29,10 @@ function App() {
 }
 */
 
+
 function App(props) {
+  const [open, setOpen] = useState(false)
+  console.log(open);
   return (
     <>
       {/* <div className="header">
@@ -41,7 +46,15 @@ function App(props) {
             <div className="title">
               <img src="/images/UW.png" className="App-logo" alt="UW logo" />
               <h1> UWaterloo Course Query</h1>
+              <a href = "#" onClick = { () => {
+                setOpen(!open)}
+               } className = "toggle-button">
+                <span  className = "bar"></span>
+                <span  className = "bar"></span>
+                <span  className = "bar"></span>
+              </a>
             </div>
+            {open ? 
             <ul>
               <li className="border-left">
                 <Link to="/" className="links">
@@ -58,9 +71,8 @@ function App(props) {
                   Locations
                 </Link>
               </li>
-            </ul>
+            </ul>: null}
           </nav>
-
           {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
           <Switch>

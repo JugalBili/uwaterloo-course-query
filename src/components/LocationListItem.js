@@ -8,8 +8,8 @@ const LocationListItem = ({location}) => {
     }
     return (
         <div>
-            <button onClick={handleLoadLocations}>
-                {location.buildingName}
+            <button onClick={handleLoadLocations} className = "location-buttons">
+                {location.buildingName} 
             </button>
             {showName ?
                 <ul>

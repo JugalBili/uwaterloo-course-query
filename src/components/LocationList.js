@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LocationListItem from './LocationListItem'
+
 require("dotenv").config({ path: "../../.env" });
 var KEY = process.env.REACT_APP_API_KEY;
 
