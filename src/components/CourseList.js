@@ -10,20 +10,20 @@ export default class CourseList extends React.Component {
     super(props);
     this.state = {
       courses: [],
-      keyId: 0,
-      newDoctor: [],
+      newCourse: [],
     };
   }
 
   renderCourses() {
-    console.log(this.state.courses);
+    /*console.log(this.state.courses);*/
     return this.state.courses.map((course) => (
       <CourseListItem
-        key={this.state.keyId + 1}
+        key={course.courseId}
         id={course.courseId}
-        subject={course.subjectCode}
-        catalog={course.catalogNumber}
-        title={course.title}
+        course={this.state.courses.find(
+          (singleCourse) => singleCourse.courseId === course.courseId
+        )}
+        onDeleteCourse={(id) => this.handleDeleteDoctor(id)}
       />
     ));
   }
@@ -41,20 +41,22 @@ export default class CourseList extends React.Component {
       }
     )
       .then((response) => response.json())
-      .then((result) => this.setState({ newDoctor: result }));
+      .then((result) => this.setState({ newCourse: result }));
 
-    if (this.state.newDoctor == null) {
+    console.log(this.state.newCourse);
+    if (this.state.newCourse == null) {
       console.err("Course Invalid");
     } else {
-      const newCourseList = [...this.state.courses, this.state.newDoctor];
+      const newCourseList = [...this.state.courses, this.state.newCourse];
       this.setState({ courses: newCourseList });
+      /*console.log(this.state.courses);*/
     }
   }
 
-  handelDeleteDoctor(id) {
+  handleDeleteDoctor(id) {
     console.log(`TODO: Delete course with id ${id}`);
     const newCourseList = this.state.courses.filter(
-      (course) => course.id !== id
+      (course) => course.courseId !== id
     );
     this.setState({ courses: newCourseList });
   }
