@@ -28,11 +28,17 @@
 
 .header {
   width: 100%;
+<<<<<<< HEAD
   height: fit-content;
+=======
+  height: 100px;
+  display: table;
+>>>>>>> b9fb532c65bf1bf286a8d4d99ae9bffd29d1278b
   background-color: black;
   /*border: 2px solid green;*/
 }
 
+<<<<<<< HEAD
 .header .title {
   display: inline-block;
   width: fit-content;
@@ -97,12 +103,23 @@
 
 .header .title img {
   display: inline-block;
+=======
+.header h1 {
+  color: white;
+  height: 100%;
+  text-align: center;
+}
+
+.header img {
+  float: left;
+>>>>>>> b9fb532c65bf1bf286a8d4d99ae9bffd29d1278b
   width: 100px;
   height: 100px;
   margin: 10px 10px;
   vertical-align: middle;
 }
 
+<<<<<<< HEAD
 .toggle-button{
   position: absolute;
   top:4rem;
@@ -174,6 +191,73 @@
   .header .title h1 {
     display: none;
   }
+=======
+.courses {
+  padding: 10px 20px;
+}
+
+.courses .input-field::after {
+  content: " ";
+  display: block;
+  width: 50px;
+  border: 2px solid gold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.courses .input-field #input {
+  height: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.courses .input-field #button {
+  height: 35px;
+  font-size: 14px;
+  margin: auto 10px;
+  background-color: gold;
+  border-radius: 20px;
+}
+
+.courses .input-field #button:hover {
+  background-color: rgb(207, 176, 2);
+}
+
+.courses .course {
+  max-width: 900px;
+  background-color: gold;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+.courses .course h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  display: inline-block;
+  text-decoration: underline;
+  padding-left: 20px;
+}
+
+.courses .course svg {
+  margin: auto 20px;
+  height: 15px;
+  width: 15px;
+  fill: red;
+}
+
+.courses .course svg:hover {
+  fill: black;
+}
+.courses .course .delete {
+  width: fit-content;
+  padding: 0 0;
+}
+
+.courses .course-details {
+  max-width: 800px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+>>>>>>> b9fb532c65bf1bf286a8d4d99ae9bffd29d1278b
 }
 
 .App-header {
