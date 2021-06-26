@@ -72,6 +72,7 @@ function App(props) {
                 </Link>
               </li>
             </ul>: null }
+            
           </nav>
           {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}

@@ -123,6 +123,7 @@
   background-color: gold;
   border-radius: 10px;
   vertical-align: middle;
+  
 }
 
 
@@ -131,10 +132,13 @@
 }
 
 .location-buttons{
-  background-color: black;
-  border-radius: 30px;
+  background-color:gold;
+  border-radius:10px;
   text-transform: uppercase;
-  color:gold;
+  color:black;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 1095px) {
