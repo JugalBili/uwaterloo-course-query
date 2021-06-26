@@ -27,7 +27,7 @@ function CourseListItem({ id, course, onDeleteCourse }) {
   }
 
   return (
-    <div>
+    <div className="course">
       <a href="#" onClick={handleLoadDetails}>
         {course.subjectCode} {course.catalogNumber} - {course.title}
       </a>
@@ -39,7 +39,7 @@ function CourseListItem({ id, course, onDeleteCourse }) {
 
 CourseListItem.propTypes = {
   id: PropTypes.string.isRequired,
-  course: PropTypes.array.isRequired,
+  course: PropTypes.object.isRequired,
 };
 
 export default CourseListItem;

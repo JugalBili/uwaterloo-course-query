@@ -14,6 +14,20 @@ export default class CourseList extends React.Component {
     };
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.newCourse !== this.state.newCourse) {
+      /*console.log(this.state.newCourse);*/
+      if (this.state.newCourse == null) {
+        console.error("Course Invalid");
+      } else {
+        const newCourseList = [...this.state.courses, this.state.newCourse[0]];
+        /*console.log(newCourseList);*/
+        this.setState({ courses: newCourseList });
+        /*console.log(this.state.courses);*/
+      }
+    }
+  }
+
   renderCourses() {
     /*console.log(this.state.courses);*/
     return this.state.courses.map((course) => (
@@ -32,24 +46,28 @@ export default class CourseList extends React.Component {
     name = name.replace(/\s/g, "");
     var nameArr = name.split(/(\d+)/);
 
-    fetch(
-      `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
-      {
-        headers: {
-          "x-api-key": `${KEY}`,
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((result) => this.setState({ newCourse: result }));
-
-    console.log(this.state.newCourse);
-    if (this.state.newCourse == null) {
-      console.err("Course Invalid");
+    if (
+      !this.state.courses.find(
+        (course) =>
+          course.subjectCode === nameArr[0].toUpperCase() &&
+          course.catalogNumber === nameArr[1]
+      )
+    ) {
+      fetch(
+        `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
+        {
+          headers: {
+            "x-api-key": `${KEY}`,
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          /*console.log(result);*/
+          this.setState({ newCourse: result });
+        });
     } else {
-      const newCourseList = [...this.state.courses, this.state.newCourse];
-      this.setState({ courses: newCourseList });
-      /*console.log(this.state.courses);*/
+      console.error("Duplicate Course Entered");
     }
   }
 
@@ -63,7 +81,7 @@ export default class CourseList extends React.Component {
 
   render() {
     return (
-      <div className="Courses">
+      <div className="courses">
         <h2>Course List</h2>
         <AddCourse onAddCourse={(name) => this.handleAddCourse(name)} />
         {this.renderCourses()}

@@ -1,12 +1,15 @@
 import React from "react";
 
 const CourseDetails = ({ desc, require }) => {
+  var requireArr = require.split(".");
+
   return (
-    <>
+    <div className="course-details">
       <p>{desc}</p>
-      <br></br>
-      <p>{require}</p>
-    </>
+      {requireArr.map((req) => (
+        <p>{req}</p>
+      ))}
+    </div>
   );
 };
 
