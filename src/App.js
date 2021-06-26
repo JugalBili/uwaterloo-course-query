@@ -55,6 +55,7 @@ function App(props) {
               </a>
             </div>
             {open ? 
+            null : 
             <ul>
               <li className="border-left">
                 <Link to="/" className="links">
@@ -71,8 +72,7 @@ function App(props) {
                   Locations
                 </Link>
               </li>
-            </ul>: null }
-            
+            </ul>  }  
           </nav>
           {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
