@@ -46,7 +46,7 @@ function App(props) {
             <div className="title">
               <img src="/images/UW.png" className="App-logo" alt="UW logo" />
               <h1> UWaterloo Course Query</h1>
-              <a href = "#" onClick = { () => {
+              <a onClick = { () => {
                 setOpen(!open)}
                } className = "toggle-button">
                 <span  className = "bar"></span>
@@ -71,7 +71,7 @@ function App(props) {
                   Locations
                 </Link>
               </li>
-            </ul>: null}
+            </ul>: null }
           </nav>
           {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
