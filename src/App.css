@@ -132,13 +132,19 @@
 }
 
 .location-buttons{
-  background-color:gold;
-  border-radius:10px;
-  text-transform: uppercase;
+  max-width: 900px;
+  background-color: gold;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+.location-buttons h3{
+  font-size: 18px;
+  font-weight: 500;
   color:black;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
+  text-decoration: underline;
+  padding-left: 20px;
 }
 
 @media (max-width: 1095px) {

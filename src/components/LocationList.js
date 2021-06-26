@@ -28,7 +28,7 @@ const LocationList = () => {
     }, []);
     return (
         <>
-            <h2>List of UW Buildings</h2>
+            <h2 className = "Location-Heading">List of UW Buildings</h2>
             {locations && locations.map((location) => (
                 <LocationListItem key={location.buildingID} location={location} />
             ))

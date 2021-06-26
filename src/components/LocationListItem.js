@@ -7,9 +7,11 @@ const LocationListItem = ({location}) => {
         setShowName(!showName);
     }
     return (
-        <div>
-            <a onClick={handleLoadLocations} className = "location-buttons">
+        <div className = "location-buttons">
+            <a onClick={handleLoadLocations} >
+                <h3>
                 {location.buildingName} 
+                </h3>
             </a>
             {showName ?
                 <ul>
