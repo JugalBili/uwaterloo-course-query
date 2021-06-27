@@ -28,9 +28,11 @@ const LocationList = () => {
     return (
         <>
             <h2>List of UW Buildings</h2>
-            {locations && locations.map((location) => (
-                <LocationListItem key={location.buildingID} location={location} />
-            ))
+            {locations && locations.map((location) => {
+                if(location.parentBuildingCode != null){return <LocationListItem key={location.parentBuildingCode} location={location} />}
+                else{return <LocationListItem key={location.buildingCode} location={location} />}
+                
+}) /*<LocationListItem key={location.buildingCode} location={location} />))*/
 
             }
         </>
