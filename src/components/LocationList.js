@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LocationListItem from './LocationListItem'
+
 require("dotenv").config({ path: "../../.env" });
 var KEY = process.env.REACT_APP_API_KEY;
 
@@ -27,7 +28,7 @@ const LocationList = () => {
     }, []);
     return (
         <>
-            <h2>List of UW Buildings</h2>
+            <h2 className = "Location-Heading">List of UW Buildings</h2>
             {locations && locations.map((location) => (
                 <LocationListItem key={location.buildingID} location={location} />
             ))

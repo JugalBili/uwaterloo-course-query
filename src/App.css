@@ -28,89 +28,202 @@
 
 .header {
   width: 100%;
-  height: 100px;
-  display: table;
+  height: fit-content;
   background-color: black;
+  /*border: 2px solid green;*/
 }
 
-.header h1 {
-  color: white;
-  height: 100%;
-  text-align: center;
-}
-
-.header img {
-  float: left;
-  width: 100px;
-  height: 100px;
+.header .title {
+  display: inline-block;
+  width: fit-content;
+  /*border: 2px solid red;*/
+  padding: 10px 10px;
   vertical-align: middle;
 }
 
-.courses {
-  padding: 10px 20px;
+.header .title h1 {
+  display: inline-block;
+
+  /*border: 2px solid blue;*/
+  margin: 20px ;
+  font-size: 32px;
+  color: gold;
+  vertical-align: middle;
 }
 
-.courses .input-field::after {
-  content: " ";
-  display: block;
-  width: 50px;
-  border: 2px solid gold;
-  margin-top: 20px;
-  margin-bottom: 30px;
+.header ul {
+  position: relative;
+  float: right;
+  color: gold;
+  display: inline-block;
+  font-size: 20px;
+  /*border: 2px solid purple;*/
+  list-style: square;
+  width: fit-content;
+  margin: 50px 50px;
+  vertical-align: middle;
 }
 
-.courses .input-field #input {
-  height: 25px;
-  font-size: 14px;
-  text-transform: uppercase;
+.header li {
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 0 30px;
+  /* border-right: 2px solid gold; */
+  vertical-align: middle;
 }
-.courses .input-field #button {
-  height: 35px;
-  font-size: 14px;
-  margin: auto 10px;
+/* 
+.header .border-left {
+  border-left: 2px solid gold;
+  vertical-align: middle;
+} */
+
+.header .links {
+  text-decoration: none;
+  color: gold;
+  vertical-align: middle;
+}
+
+.header .links:hover {
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+}
+
+.header .links:active {
+  text-decoration: none;
+  color: red;
+  vertical-align: middle;
+}
+
+.header .links-1 {
+  text-decoration: none;
+  color: gold;
+  vertical-align: middle;
+}
+
+.header .links-1:hover {
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+}
+
+.header .links-1:active {
+  text-decoration: none;
+  color: red;
+  vertical-align: middle;
+}
+
+
+.header .title img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px 10px;
+  vertical-align: middle;
+}
+
+.toggle-button{
+  position: absolute;
+  top:4rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+  vertical-align: middle;
+}
+
+
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
   background-color: gold;
-  border-radius: 20px;
+  border-radius: 10px;
+  vertical-align: middle;
+  
 }
 
-.courses .input-field #button:hover {
-  background-color: rgb(207, 176, 2);
+
+.toggle-button .bar:hover{
+  color: white;
 }
 
-.courses .course {
+.location-buttons{
   max-width: 900px;
   background-color: gold;
   border-radius: 20px;
   margin: 20px 0;
 }
 
-.courses .course h3 {
+.location-buttons h3{
   font-size: 18px;
   font-weight: 500;
-  color: black;
+  color:black;
   display: inline-block;
   text-decoration: underline;
   padding-left: 20px;
 }
 
-.courses .course svg {
-  margin: auto 20px;
-  height: 15px;
-  width: 15px;
-  fill: red;
-}
-
-.courses .course svg:hover {
-  fill: black;
-}
-.courses .course .delete {
-  width: fit-content;
-  padding: 0 0;
-}
-
-.courses .course-details {
+.location-buttons .location-details{
   max-width: 800px;
   padding-left: 40px;
   padding-bottom: 20px;
+}
+
+
+.location-buttons .location-details .lists{
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+@media (max-width: 1098.5px) {
+  .toggle-button{
+    display: flex;
+  }
+  .header .links{
+    width:100%;
+    position: relative;
+    bottom: 200px;
+  }
+
+  .header .links-1{
+    display: none;
+  }
+  
+  .header {
+    align-items: flex-start;
+    display: table;
+    height: fit-content;
+    
+  } 
+
+  .header ul{
+    width: 100%;
+    display: grid;
+    text-align: left;
+  }
+  .header li{
+    text-align: left;
+    padding: 0rem 3.5rem;
+  }
+  .header li a{
+    padding:  .5rem 1rem;
+  }
+
+  .header.links:active {
+    display: flex;
+  }
+}
+
+
+
+@media (max-width: 570px){
+  .header .title h1 {
+    display: none;
+  }
 }
 
 .App-header {

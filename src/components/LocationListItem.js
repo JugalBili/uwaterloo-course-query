@@ -7,16 +7,20 @@ const LocationListItem = ({location}) => {
         setShowName(!showName);
     }
     return (
-        <div>
-            <button onClick={handleLoadLocations}>
-                {location.buildingName}
-            </button>
+        <div className = "location-buttons">
+            <a href = "#" onClick={handleLoadLocations} >
+                <h3>
+                {location.buildingName} 
+                </h3>
+            </a>
             {showName ?
-                <ul>
-                    <li>Building Code: {location.buildingCode}</li>
-                    <li>Latitude: {location.latitude}</li>
-                    <li>Longitude: {location.longitude}</li>
-                </ul> :
+                <div className = "location-details">
+                    <ul>
+                        <li className = "lists">Building Code: {location.buildingCode}</li>
+                        <li className = "lists">Latitude: {location.latitude}</li>
+                        <li className = "lists">Longitude: {location.longitude}</li>
+                    </ul>
+                </div> :
             null
         }
 
