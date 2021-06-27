@@ -15,6 +15,7 @@ const LocationDropdown = ({ onLocationChange }) => {
 
   return (
     <div className="location-select">
+      <p>Select a building group from the dropdown</p>
       <select
         name="location-type"
         id="location-type"
