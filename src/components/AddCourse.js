@@ -19,7 +19,7 @@ const AddCourse = (props) => {
     setCourseName(""); // Clears text field
   };
 
-  const handleKeyDown = (e) => {
+  const _handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleAddCourse();
     }
@@ -32,7 +32,7 @@ const AddCourse = (props) => {
         type="text"
         value={courseName}
         onChange={handleChangeName}
-        onKeyPress={handleKeyDown}
+        onKeyPress={_handleKeyDown}
       />
       <button id="button" onClick={handleAddCourse}>
         Add Course
