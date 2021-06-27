@@ -21,8 +21,8 @@ const AddCourse = (props) => {
 
   return (
     <div className="input-field">
-      <input type="text" value={courseName} onChange={handleChangeName} />
-      <button onClick={handleAddCourse}>Add Course</button>
+      <input id="input" type="text" value={courseName} onChange={handleChangeName} />
+      <button id="button" onClick={handleAddCourse}> Search for Course</button>
     </div>
   );
 };
