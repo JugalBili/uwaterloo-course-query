@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const AddCourse = (props) => {
   const [courseName, setCourseName] = useState("");
@@ -18,6 +18,21 @@ const AddCourse = (props) => {
 
     setCourseName(""); // Clears text field
   };
+
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        props.onAddCourse(courseName);
+        event.preventDefault();
+        handleAddCourse();
+        // callMyFunction();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.addEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <div className="input-field">
