@@ -28,7 +28,7 @@ function CourseListItem({ id, course, onDeleteCourse }) {
 
   return (
     <div className="course">
-      <a href="#" onClick={handleLoadDetails}>
+      <a onClick={handleLoadDetails}>
         <h3>
           {course.subjectCode} {course.catalogNumber} - {course.title}
         </h3>
