@@ -250,7 +250,7 @@
 
 @media (max-width: 1098.5px) {
   .toggle-button {
-    position: fixed;
+    position: absolute;
     top: 4rem;
     right: 1rem;
     display: flex;
@@ -308,7 +308,7 @@
 
   .toggle-button {
   
-    position: fixed;
+    position: absolute;
     top: 3rem;
     right: 1rem;
     display: flex;
