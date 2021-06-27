@@ -19,10 +19,24 @@ const AddCourse = (props) => {
     setCourseName(""); // Clears text field
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAddCourse();
+    }
+  };
+
   return (
     <div className="input-field">
-      <input id="input" type="text" value={courseName} onChange={handleChangeName} />
-      <button id="button" onClick={handleAddCourse}> Search for Course</button>
+      <input
+        id="input"
+        type="text"
+        value={courseName}
+        onChange={handleChangeName}
+        onKeyPress={handleKeyDown}
+      />
+      <button id="button" onClick={handleAddCourse}>
+        Add Course
+      </button>
     </div>
   );
 };
