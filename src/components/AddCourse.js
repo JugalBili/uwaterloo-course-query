@@ -3,10 +3,10 @@ import React, { useState , useEffect } from "react";
 const AddCourse = (props) => {
   const [courseName, setCourseName] = useState("");
 
-  // const handleChangeName = (event) => {
-  //   setCourseName(event.target.value);
-  //   // console.log(courseName);
-  // };
+  const handleChangeName = (event) => {
+    setCourseName(event.target.value);
+    //console.log(courseName);
+  };
 
 
   
@@ -26,7 +26,6 @@ const AddCourse = (props) => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
         props.onAddCourse(courseName);
         event.preventDefault();
-        setCourseName(event.target.value);
         handleAddCourse();
         // callMyFunction();
       }
@@ -39,9 +38,7 @@ const AddCourse = (props) => {
 
   return (
     <div className="input-field">
-      <input id="input" type="text" value={courseName} onChange={(event) =>{
-        setCourseName(event.target.value);
-      }} />
+      <input id="input" type="text" value={courseName} onChange={handleChangeName} />
       <button id="button" onClick={handleAddCourse}> Search for Course</button>
     </div>
   );
