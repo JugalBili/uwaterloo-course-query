@@ -1,24 +1,31 @@
 import React, { useState, useRef } from "react";
+import LocationListItem from "./LocationListItem";
 
 const LocationDropdown = ({ onLocationChange }) => {
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => setIsOpen(!isOpen);
 
-  const handleLocationChange = (index) => {
-    onLocationChange(index);
-  };
+  const [selectedValue, setSelectedValue] = useState("select");
+
+  function handleLocationChange(event) {
+    setSelectedValue(event.target.value);
+    onLocationChange();
+  }
 
   return (
     <div className="location-select">
+      <p>Select a building group from the dropdown</p>
       <select
         name="location-type"
         id="location-type"
-        onChange={handleLocationChange(this.selectedIndex())}
+        value={selectedValue}
+        onChange={handleLocationChange}
       >
-        <option value="null" selected>
-          Academic
+        <option value="select" selected hidden disabled>
+          Select Type
         </option>
+        <option value="null">Academic</option>
         <option value="CGR">CGR</option>
         <option value="CLN">CLN</option>
         <option value="CLV">CLV</option>
