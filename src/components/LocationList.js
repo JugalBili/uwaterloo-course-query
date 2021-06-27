@@ -32,7 +32,7 @@ const LocationList = () => {
 
   const handleLocationChange = () => {
     var index = document.getElementById("location-type").value;
-    console.log(index);
+    /*console.log(index);*/
     if (index === "CGR") {
       setSelectedLocations(grouped.CGR);
     } else if (index === "CLN") {
@@ -68,7 +68,7 @@ const LocationList = () => {
       />
       {selectedLocations &&
         selectedLocations.map((location) => (
-          <LocationListItem key={location.buildingID} location={location} />
+          <LocationListItem key={location.buildingId} location={location} />
         ))}
     </div>
   );
