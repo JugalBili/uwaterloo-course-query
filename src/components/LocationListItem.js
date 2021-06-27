@@ -1,30 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const LocationListItem = ({location}) => {
-    const [showName, setShowName] = useState(false);
+const LocationListItem = ({ location }) => {
+  const [showName, setShowName] = useState(false);
 
-    const handleLoadLocations = () => {
-        setShowName(!showName);
-    }
-   // {if(location.parentBuildingName)}
-    return (
-        <div>
-            <a onClick={handleLoadLocations} >
-                {location.buildingName}
-            </a>
-            {showName ?
-                <div>
-                    <ul>
-                        <li>Building Code: {location.buildingCode}</li>
-                        <li>Latitude: {location.latitude}</li>
-                        <li>Longitude: {location.longitude}</li>
-                    </ul>
-                </div> :
-            null
-        }
-
+  const handleLoadLocations = () => {
+    setShowName(!showName);
+  };
+  return (
+    <div className="location-buttons">
+      <a onClick={handleLoadLocations}>
+        <h3>{location.buildingName}</h3>
+      </a>
+      {showName ? (
+        <div className="location-details">
+          <ul>
+            <li className="lists">Building Code: {location.buildingCode}</li>
+            <li className="lists">Latitude: {location.latitude}</li>
+            <li className="lists">Longitude: {location.longitude}</li>
+          </ul>
         </div>
-    );
+      ) : null}
+    </div>
+  );
 };
 
 export default LocationListItem;
