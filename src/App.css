@@ -122,9 +122,6 @@
 }
 
 .toggle-button {
-  position: absolute;
-  top: 4rem;
-  right: 1rem;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -253,12 +250,15 @@
 
 @media (max-width: 1098.5px) {
   .toggle-button {
+    position: fixed;
+    top: 4rem;
+    right: 1rem;
     display: flex;
   }
   .header .links {
     width: 100%;
     position: relative;
-    bottom: 200px;
+    bottom: 25px;
   }
 
   .header .links-1 {
@@ -271,11 +271,12 @@
     height: fit-content;
   }
 
-  .header ul {
+  .header ul  {
     width: 100%;
     display: grid;
     text-align: left;
   }
+
   .header li {
     text-align: left;
     padding: 0rem 3.5rem;
@@ -296,9 +297,24 @@
 }
 
 @media (max-width: 570px) {
-  .header .title h1 {
+  .header .title img {
     display: none;
   }
+
+  .header .title h1{
+    position: relative;
+    right: 20px;
+  }
+
+  .toggle-button {
+  
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    display: flex;
+  
+  }
+
 }
 
 .App-header {
