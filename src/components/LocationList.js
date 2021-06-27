@@ -3,7 +3,7 @@ import LocationListItem from "./LocationListItem";
 
 require("dotenv").config({ path: "../../.env" });
 var KEY = process.env.REACT_APP_API_KEY;
-
+var groupBy = require('lodash.groupby');
 const LocationList = () => {
   const [locations, setLocations] = useState(null);
 
@@ -20,6 +20,12 @@ const LocationList = () => {
   useEffect(() => {
     fetchLocations();
   }, []);
+
+  var grouped = groupBy(locations, function(loc) {
+    return loc.parentBuildingCode;
+  });
+  var nullCode = grouped[null]
+console.log(nullCode)
   return (
     <div className="locations">
       <h2 className="Location-Heading">List of UW Buildings</h2>
