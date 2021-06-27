@@ -95,6 +95,25 @@
   vertical-align: middle;
 }
 
+.header .links-1 {
+  text-decoration: none;
+  color: gold;
+  vertical-align: middle;
+}
+
+.header .links-1:hover {
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+}
+
+.header .links-1:active {
+  text-decoration: none;
+  color: red;
+  vertical-align: middle;
+}
+
+
 .header .title img {
   display: inline-block;
   width: 100px;
@@ -160,17 +179,27 @@
   color: black;
 }
 
-@media (max-width: 1095px) {
+@media (max-width: 1098.5px) {
   .toggle-button{
     display: flex;
   }
   .header .links{
     width:100%;
+    position: relative;
+    bottom: 200px;
   }
+
+  .header .links-1{
+    display: none;
+  }
+  
   .header {
     align-items: flex-start;
     display: table;
-  }
+    height: fit-content;
+    
+  } 
+
   .header ul{
     width: 100%;
     display: grid;
@@ -188,6 +217,8 @@
     display: flex;
   }
 }
+
+
 
 @media (max-width: 570px){
   .header .title h1 {

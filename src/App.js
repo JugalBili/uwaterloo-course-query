@@ -54,25 +54,42 @@ function App(props) {
                 <span  className = "bar"></span>
               </a>
             </div>
-            {open ? 
-            null : 
             <ul>
               <li className="border-left">
-                <Link to="/" className="links">
+                <Link to="/" className="links-1">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/courses" className="links">
+                <Link to="/courses" className="links-1">
                   Courses
                 </Link>
               </li>
               <li>
-                <Link to="/locations" className="links">
+                <Link to="/locations" className="links-1">
                   Locations
                 </Link>
               </li>
-            </ul>  }  
+            </ul>
+            {open ? 
+            <ul>
+            <li className="border-left">
+              <Link to="/" className="links">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/courses" className="links">
+                Courses
+              </Link>
+            </li>
+            <li>
+              <Link to="/locations" className="links">
+                Locations
+              </Link>
+            </li>
+          </ul> : null 
+              }  
           </nav>
           {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
