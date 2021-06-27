@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 
 const AddCourse = (props) => {
   const [courseName, setCourseName] = useState("");
 
-  const handleChangeName = (event) => {
-    setCourseName(event.target.value);
-    // console.log(courseName);
-  };
+  // const handleChangeName = (event) => {
+  //   setCourseName(event.target.value);
+  //   // console.log(courseName);
+  // };
 
+
+  
   const handleAddCourse = () => {
     console.log(courseName);
     if (courseName === "") {
@@ -15,16 +17,37 @@ const AddCourse = (props) => {
     } else {
       props.onAddCourse(courseName);
     }
-
+    
     setCourseName(""); // Clears text field
   };
 
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        props.onAddCourse(courseName);
+        event.preventDefault();
+        setCourseName(event.target.value);
+        handleAddCourse();
+        // callMyFunction();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.addEventListener("keydown", listener);
+    };
+  }, []);
+
   return (
     <div className="input-field">
-      <input id="input" type="text" value={courseName} onChange={handleChangeName} />
+      <input id="input" type="text" value={courseName} onChange={(event) =>{
+        setCourseName(event.target.value);
+      }} />
       <button id="button" onClick={handleAddCourse}> Search for Course</button>
     </div>
   );
 };
+
+
+
 
 export default AddCourse;
