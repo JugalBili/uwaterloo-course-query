@@ -19,25 +19,24 @@ const AddCourse = (props) => {
     setCourseName(""); // Clears text field
   };
 
-  useEffect(() => {
-    const listener = event => {
-      if (event.code === "Enter" || event.code === "NumpadEnter") {
-        props.onAddCourse(courseName);
-        event.preventDefault();
-        handleAddCourse();
-        // callMyFunction();
-      }
-    };
-    document.addEventListener("keydown", listener);
-    return () => {
-      document.addEventListener("keydown", listener);
-    };
-  }, []);
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAddCourse();
+    }
+  };
 
   return (
     <div className="input-field">
-      <input id="input" type="text" value={courseName} onChange={handleChangeName} />
-      <button id="button" onClick={handleAddCourse}> Search for Course</button>
+      <input
+        id="input"
+        type="text"
+        value={courseName}
+        onChange={handleChangeName}
+        onKeyPress={handleKeyDown}
+      />
+      <button id="button" onClick={handleAddCourse}>
+        Add Course
+      </button>
     </div>
   );
 };

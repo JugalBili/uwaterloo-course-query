@@ -26,10 +26,6 @@
   text-align: center;
 } */
 
-.home {
-  padding: 20px 35px;
-}
-
 .header {
   width: 100%;
   height: fit-content;
@@ -72,7 +68,7 @@
   display: inline-block;
   margin: 10px 0px;
   padding: 0 30px;
-  /* border-right: 2px solid gold; */
+
   vertical-align: middle;
 }
 /* 
@@ -151,24 +147,6 @@
 
 .locations {
   padding: 20px 35px;
-}
-
-.locations .location-select p {
-  display: inline-block;
-}
-
-.locations .location-select select {
-  height: 30px;
-  margin: auto 10px;
-}
-
-.locations .location-select::after {
-  content: " ";
-  display: block;
-  width: 50px;
-  border: 2px solid gold;
-  margin-top: 20px;
-  margin-bottom: 30px;
 }
 
 .location-buttons {
@@ -310,6 +288,7 @@
     display: flex;
   }
 }
+
 
 @media (max-width: 570px) {
   .header .title h1 {
