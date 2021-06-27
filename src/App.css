@@ -289,6 +289,12 @@
   }
 }
 
+@media (min-width: 1098.5px){
+  .header .links{
+    display: none;
+  }
+}
+
 @media (max-width: 570px) {
   .header .title h1 {
     display: none;
