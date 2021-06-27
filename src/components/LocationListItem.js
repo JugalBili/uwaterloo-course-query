@@ -9,9 +9,9 @@ const LocationListItem = ({location}) => {
    // {if(location.parentBuildingName)}
     return (
         <div>
-            <button onClick={handleLoadLocations}>
+            <a onClick={handleLoadLocations} >
                 {location.buildingName}
-            </button>
+            </a>
             {showName ?
                 <div>
                     <ul>

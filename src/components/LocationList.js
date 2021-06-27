@@ -25,6 +25,11 @@ const LocationList = () => {
     useEffect(() => {
         fetchLocations();
     }, []);
+    const result = locations.reduce(function (r, a) {
+        r[a.parentBuildingCode] = r[a.parentBuildingCode] || [];
+        r[a.parentBuildingCode].push(a);
+        return r;
+    }, Object.create(null));
     return (
         <>
             <h2>List of UW Buildings</h2>
