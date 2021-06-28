@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const AddCourse = (props) => {
   const [courseName, setCourseName] = useState("");
 
   const handleChangeName = (event) => {
     setCourseName(event.target.value);
-    // console.log(courseName);
+    //console.log(courseName);
   };
 
   const handleAddCourse = () => {

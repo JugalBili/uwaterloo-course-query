@@ -19,7 +19,7 @@ const LocationListItem = ({ location }) => {
             <li className="lists">Longitude: {location.longitude}</li>
           </ul>
         </div>
-      ) : null}
+      ) : null }
     </div>
   );
 };
