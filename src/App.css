@@ -289,8 +289,8 @@
   }
 }
 
-@media (min-width: 1098.5px){
-  .header .links{
+@media (min-width: 1098.5px) {
+  .header .links {
     display: none;
   }
 }
