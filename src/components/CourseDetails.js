@@ -1,7 +1,10 @@
 import React from "react";
 
 const CourseDetails = ({ desc, require }) => {
-  var requireArr = require.split(".");
+  var requireArr = [];
+  try {
+    requireArr = require.split(".");
+  } catch {}
 
   return (
     <div className="course-details">

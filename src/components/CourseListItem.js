@@ -4,6 +4,7 @@ import CourseDetails from "./CourseDetails";
 
 function CourseListItem({ id, course, onDeleteCourse }) {
   const [courseDetails, setCourseDetails] = useState(null);
+  const [showName, setShowName] = useState(false);
 
   function handleDeleteCourse() {
     //console.log("TODO: delete course...");
@@ -12,6 +13,7 @@ function CourseListItem({ id, course, onDeleteCourse }) {
 
   function handleLoadDetails() {
     setCourseDetails(course);
+    setShowName(!showName);
   }
 
   function renderCourseDetails() {
@@ -19,10 +21,14 @@ function CourseListItem({ id, course, onDeleteCourse }) {
       return;
     }
     return (
-      <CourseDetails
-        desc={courseDetails.description}
-        require={courseDetails.requirementsDescription}
-      />
+      <>
+        {showName ? (
+          <CourseDetails
+            desc={courseDetails.description}
+            require={courseDetails.requirementsDescription}
+          />
+        ) : null}
+      </>
     );
   }
 

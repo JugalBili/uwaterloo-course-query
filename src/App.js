@@ -54,7 +54,7 @@ function App(props) {
                 <span  className = "bar"></span>
               </a>
             </div>
-            <ul>
+            <ul className = "links-1">
               <li className="border-left">
                 <Link to="/" className="links-1">
                   Home
