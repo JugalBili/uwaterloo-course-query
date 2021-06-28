@@ -41,10 +41,11 @@ function App(props) {
       </div> */}
 
       <Router>
-        <div>
+        <div className ="main-content">
           <nav className="header">
             <div className="title">
-              <img src="/images/UW.png" className="App-logo" alt="UW logo" />
+              <img src="./images/UW.png" className="App-logo" alt="UW logo" />
+              {/* <img src="/images/UWENG.jpg" className="background-pic" alt="uwEngBuild"/> */}
               <h1> UWaterloo Course Query</h1>
               <a onClick = { () => {
                 setOpen(!open)}

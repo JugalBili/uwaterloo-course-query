@@ -28,8 +28,10 @@ const AddCourse = (props) => {
   return (
     <div className="input-field">
       <input
+        className ="field"
         id="input"
         type="text"
+        placeholder = "Enter your course"
         value={courseName}
         onChange={handleChangeName}
         onKeyPress={_handleKeyDown}
