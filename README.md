@@ -3,7 +3,7 @@
 ## Sections
 
 - [Description](#description)
-  - [Screenshots](##screenshots)
+  - [Screenshots](#screenshots)
 - [Authors](#authors)
 - [License](#license)
 
