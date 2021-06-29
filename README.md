@@ -14,7 +14,7 @@
 This web-app was made using React, HTML and CSS and its goal is to provide the students at UWaterloo the ability to view their course descriptions and requirements. Also provides a list of buildings present in the UWaterloo campus.
 <br>
 <br>
-Web application can be found at: (INSERT_HEROKU_LINK)
+Web application can be found at: https://uw-course-query.herokuapp.com/
 
 > Heroku server sleeps after several minutes of inactivity, so loading up the application may take longer than usual.
 
