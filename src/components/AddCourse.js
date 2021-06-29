@@ -31,7 +31,11 @@ const AddCourse = (props) => {
         className="field"
         id="input"
         type="text"
+<<<<<<< HEAD
         placeholder="Enter Coursename e.g. CS136"
+=======
+        placeholder = "Enter Coursename e.g. CS136"
+>>>>>>> 1bcd4c7b2ea026cb1331e2c91d9997fc28a3da2b
         value={courseName}
         onChange={handleChangeName}
         onKeyPress={_handleKeyDown}

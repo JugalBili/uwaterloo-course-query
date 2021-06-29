@@ -75,7 +75,7 @@ function App(props) {
             {open ? 
             <ul>
             <li className="border-left">
-              <Link to="/" className="links">
+              <Link to="/" className="links" >
                 Home
               </Link>
             </li>
@@ -101,9 +101,11 @@ function App(props) {
             <Route path="/locations">
               <LocationList />
             </Route>
-            <Route path="/">
+            <body className = "Home-section">
+            <Route path="/" >
               <Home />
             </Route>
+            </body>
           </Switch>
         </div>
       </Router>
