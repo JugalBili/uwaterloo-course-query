@@ -23,22 +23,14 @@ body {
   position: relative;
   background: transparent;
 }
-<<<<<<< HEAD
-body::before {
-  content: "";
-  position: fixed;
-  background: grey url(./images/UWENG.jpg) top right no-repeat;
-  left: 0;
-=======
 body.Home-section::before {
   content: "";
   position: fixed;
-  background: grey url(./images/UWENG.jpg) center center no-repeat ;
-  left:0;
->>>>>>> 1bcd4c7b2ea026cb1331e2c91d9997fc28a3da2b
+  background: grey url(./images/UWENG.jpg) center center no-repeat;
+  left: 0;
   background-size: cover;
   opacity: 0.7;
-  filter: blur(2px);
+  filter: blur(3px);
   right: 0;
   top: 0;
   height: 100vh;
@@ -254,13 +246,8 @@ body.Home-section::before {
   font-family: sans-serif, "Trebuchet MS";
 }
 
-<<<<<<< HEAD
 ::placeholder {
   font-size: 12px;
-=======
-::placeholder{
-  font-size: 10px;
->>>>>>> 1bcd4c7b2ea026cb1331e2c91d9997fc28a3da2b
   vertical-align: middle;
   position: relative;
   bottom: 0px;
@@ -409,10 +396,6 @@ body.Home-section::before {
     display: flex;
   }
 }
-<<<<<<< HEAD
-=======
-ee
->>>>>>> 1bcd4c7b2ea026cb1331e2c91d9997fc28a3da2b
 
 .App-header {
   background-color: #282c34;
