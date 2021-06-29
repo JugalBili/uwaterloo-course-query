@@ -13,6 +13,15 @@ const Home = () => {
         To view a list of waterloo campus locations, click on the 'Locations'
         tab
       </p>
+      <br></br>
+      <br></br>
+      <p>
+        Data for courses and locations is being recieved from UWaterloo API,
+        more info avout the API can be found on:
+        <a href="https://uwaterloo.ca/api/" target="_blank">
+          https://uwaterloo.ca/api/
+        </a>
+      </p>
     </div>
   );
 };

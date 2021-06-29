@@ -4,12 +4,26 @@
 
 .home {
   padding: 20px 35px;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .home h2 {
   position: relative;
   font-size: 2rem;
   text-align: center;
+}
+
+.home h2::after {
+  content: " ";
+  display: block;
+  width: 50px;
+  font-size: 8px;
+  border: 2px solid gold;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 h2 {
@@ -262,6 +276,7 @@ body.Home-section::before {
 
 ::placeholder {
   font-size: 12px;
+  text-transform: none;
   vertical-align: middle;
   position: relative;
   bottom: 0px;
