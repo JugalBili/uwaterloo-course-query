@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.home {
+  padding: 20px 35px;
+}
+
 .home h2 {
   position: relative;
   font-size: 2rem;
@@ -229,6 +233,16 @@ body.Home-section::before {
   font-weight: 800;
 }
 
+.location-select::after {
+  content: " ";
+  display: block;
+  width: 50px;
+  font-size: 8px;
+  border: 2px solid gold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .courses {
   padding: 20px 35px;
 }
@@ -261,7 +275,7 @@ body.Home-section::before {
 .courses .input-field::after {
   content: " ";
   display: block;
-  width: 220px;
+  width: 50px;
   font-size: 8px;
   border: 2px solid gold;
   margin-top: 20px;
