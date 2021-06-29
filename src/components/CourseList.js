@@ -45,16 +45,19 @@ export default class CourseList extends React.Component {
   handleAddCourse(name) {
     name = name.replace(/\s/g, "");
     var nameArr = name.split(/(\d+)/);
+    nameArr.push("");
 
     if (
       !this.state.courses.find(
         (course) =>
           course.subjectCode === nameArr[0].toUpperCase() &&
-          course.catalogNumber === nameArr[1]
+          course.catalogNumber === nameArr[1] + nameArr[2]
       )
     ) {
       fetch(
-        `${process.env.REACT_APP_API_ENDPOINT}/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
+        `${process.env.REACT_APP_API_ENDPOINT}/Courses/1219/${nameArr[0]}/${
+          nameArr[1] + nameArr[2]
+        }`,
         {
           headers: {
             "x-api-key": `${process.env.REACT_APP_API_KEY}`,
