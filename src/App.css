@@ -2,6 +2,46 @@
   text-align: center;
 }
 
+.home {
+  padding: 20px 35px;
+}
+
+.home h2 {
+  position: relative;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: sans-serif, "Trebuchet MS";
+}
+
+p {
+  font-family: sans-serif, "Trebuchet MS";
+}
+
+body {
+  font-family: "open sans", sans-serif;
+  background-color: grey;
+  /* s */
+  position: relative;
+  background: transparent;
+}
+body.Home-section::before {
+  content: "";
+  position: fixed;
+  background: grey url(./images/UWENG.jpg) center center no-repeat;
+  left: 0;
+  background-size: cover;
+  opacity: 0.7;
+  filter: blur(3px);
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+}
+
+.main-content 
 /* .App-logo {
   height: 50px;
   vertical-align: left;
@@ -25,10 +65,6 @@
   height: 100%;
   text-align: center;
 } */
-
-.home {
-  padding: 20px 35px;
-}
 
 .header {
   width: 100%;
@@ -72,7 +108,7 @@
   display: inline-block;
   margin: 10px 0px;
   padding: 0 30px;
-  /* border-right: 2px solid gold; */
+
   vertical-align: middle;
 }
 /* 
@@ -150,26 +186,8 @@
   padding: 20px 35px;
 }
 
-.locations .location-select p {
-  display: inline-block;
-}
-
-.locations .location-select select {
-  height: 30px;
-  margin: auto 10px;
-}
-
-.locations .location-select::after {
-  content: " ";
-  display: block;
-  width: 50px;
-  border: 2px solid gold;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
 .location-buttons {
-  max-width: 900px;
+  max-width: 600px;
   background-color: gold;
   border-radius: 20px;
   margin: 20px 0;
@@ -180,7 +198,7 @@
 }
 
 .location-buttons h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: black;
   display: inline-block;
@@ -200,31 +218,87 @@
   color: black;
 }
 
+.location-select select {
+  height: 30px;
+  width: 150px;
+  margin: auto 15px;
+  font-size: 12px;
+  background-color: gold;
+  position: relative;
+  border-color: grey;
+  bottom: 2px;
+  right: 14px;
+  font-family: sans-serif, "Trebuchet MS";
+  font-style: italic;
+  font-weight: 800;
+}
+
+.location-select::after {
+  content: " ";
+  display: block;
+  width: 50px;
+  font-size: 8px;
+  border: 2px solid gold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .courses {
   padding: 20px 35px;
+}
+
+.courses .input-field .field {
+  border: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 4px;
+  width: 200px;
+  height: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: sans-serif, "Trebuchet MS";
+}
+
+::placeholder {
+  font-size: 12px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0px;
+  color: grey;
+}
+
+:focus ::placeholder {
+  color: transparent;
 }
 
 .courses .input-field::after {
   content: " ";
   display: block;
   width: 50px;
+  font-size: 8px;
   border: 2px solid gold;
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-.courses .input-field #input {
-  height: 25px;
+/* .courses .input-field #input {
+  height: 10px;
   font-size: 16px;
   text-transform: uppercase;
-}
+} */
 
 .courses .input-field #button {
   height: 30px;
   margin: auto 15px;
-  font-size: 16px;
+  font-size: 12px;
   background-color: gold;
   border-radius: 15px;
+  position: relative;
+  bottom: 2px;
+  font-family: sans-serif, "Trebuchet MS";
+  font-style: italic;
+  font-weight: 800;
 }
 
 .courses .input-field #button:hover {
@@ -232,7 +306,7 @@
 }
 
 .courses .course {
-  max-width: 900px;
+  max-width: fit-content;
   background-color: gold;
   border-radius: 20px;
   margin: 20px 0;
@@ -243,7 +317,7 @@
 }
 
 .courses .course h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: black;
   display: inline-block;
@@ -255,6 +329,7 @@
   max-width: 800px;
   padding-left: 40px;
   padding-bottom: 20px;
+  font-size: 14px;
 }
 
 .courses .course svg {
@@ -293,7 +368,7 @@
     height: fit-content;
   }
 
-  .header ul  {
+  .header ul {
     width: 100%;
     display: grid;
     text-align: left;
@@ -323,20 +398,17 @@
     display: none;
   }
 
-  .header .title h1{
+  .header .title h1 {
     position: relative;
     right: 20px;
   }
 
   .toggle-button {
-  
     position: absolute;
     top: 3rem;
     right: 1rem;
     display: flex;
-  
   }
-
 }
 
 .App-header {

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./App.css";
-import CourseList from "./components/CourseList";
-import LocationList from "./components/LocationList";
+import CourseList from "./components/CourseList.js";
+import LocationList from "./components/LocationList.js";
 import Home from "./components/Home.js";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -41,10 +41,11 @@ function App(props) {
       </div> */}
 
       <Router>
-        <div>
+        <div className ="main-content">
           <nav className="header">
             <div className="title">
-              <img src="/images/UW.png" className="App-logo" alt="UW logo" />
+              <img src="./images/UW.png" className="App-logo" alt="UW logo" />
+              {/* <img src="/images/UWENG.jpg" className="background-pic" alt="uwEngBuild"/> */}
               <h1> UWaterloo Course Query</h1>
               <a onClick = { () => {
                 setOpen(!open)}
@@ -74,7 +75,7 @@ function App(props) {
             {open ? 
             <ul>
             <li className="border-left">
-              <Link to="/" className="links">
+              <Link to="/" className="links" >
                 Home
               </Link>
             </li>
@@ -100,9 +101,11 @@ function App(props) {
             <Route path="/locations">
               <LocationList />
             </Route>
-            <Route path="/">
+            <body className = "Home-section">
+            <Route path="/" >
               <Home />
             </Route>
+            </body>
           </Switch>
         </div>
       </Router>
