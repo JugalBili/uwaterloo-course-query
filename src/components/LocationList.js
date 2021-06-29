@@ -3,16 +3,15 @@ import LocationListItem from "./LocationListItem";
 import LocationDropdown from "./LocationDropdown";
 
 require("dotenv").config({ path: "../../.env" });
-var KEY = process.env.REACT_APP_API_KEY;
 var groupBy = require("lodash.groupby");
 const LocationList = () => {
   const [locations, setLocations] = useState(null);
   const [selectedLocations, setSelectedLocations] = useState(locations);
 
   const fetchLocations = () => {
-    fetch("https://openapi.data.uwaterloo.ca/v3/Locations", {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/Locations`, {
       headers: {
-        "x-api-key": KEY,
+        "x-api-key": process.env.REACT_APP_API_KEY,
       },
     })
       .then((response) => response.json())

@@ -4,7 +4,6 @@ import AddCourse from "./AddCourse.js";
 import { toast } from "react-toastify";
 
 require("dotenv").config({ path: "../../.env" });
-var KEY = process.env.REACT_APP_API_KEY;
 
 export default class CourseList extends React.Component {
   constructor(props) {
@@ -55,10 +54,10 @@ export default class CourseList extends React.Component {
       )
     ) {
       fetch(
-        `https://openapi.data.uwaterloo.ca/v3/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
+        `${process.env.REACT_APP_API_ENDPOINT}/Courses/1219/${nameArr[0]}/${nameArr[1]}`,
         {
           headers: {
-            "x-api-key": `${KEY}`,
+            "x-api-key": `${process.env.REACT_APP_API_KEY}`,
           },
         }
       )

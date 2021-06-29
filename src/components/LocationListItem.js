@@ -11,7 +11,7 @@ const LocationListItem = ({ location }) => {
       <a onClick={handleLoadLocations}>
         <h3>{location.buildingName}</h3>
       </a>
-      {showName ? (
+      {showName && location.latitude != null ? (
         <div className="location-details">
           <ul>
             <li className="lists">Building Code: {location.buildingCode}</li>
@@ -19,7 +19,13 @@ const LocationListItem = ({ location }) => {
             <li className="lists">Longitude: {location.longitude}</li>
           </ul>
         </div>
-      ) : null }
+      ) : showName ? (
+        <div className="location-details">
+          <ul>
+            <li className="lists">Building Code: {location.buildingCode}</li>
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 };
