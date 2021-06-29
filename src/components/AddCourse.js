@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const AddCourse = (props) => {
   const [courseName, setCourseName] = useState("");
@@ -12,6 +13,16 @@ const AddCourse = (props) => {
     console.log(courseName);
     if (courseName === "") {
       console.error("Please enter valid course. Cannot be ''.");
+      toast.error("Please enter valid course. Cannot be ' '.", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        toastId: 3,
+      });
     } else {
       props.onAddCourse(courseName);
     }

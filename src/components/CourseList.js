@@ -1,6 +1,7 @@
 import React from "react";
 import CourseListItem from "./CourseListItem.js";
 import AddCourse from "./AddCourse.js";
+import { toast } from "react-toastify";
 
 require("dotenv").config({ path: "../../.env" });
 var KEY = process.env.REACT_APP_API_KEY;
@@ -63,11 +64,35 @@ export default class CourseList extends React.Component {
       )
         .then((response) => response.json())
         .then((result) => {
-          /*console.log(result);*/
-          this.setState({ newCourse: result });
+          console.log(result);
+          if (result.length === 0) {
+            console.error("Invalid Course Given");
+            toast.error("Invalid Course Given.", {
+              position: "top-center",
+              autoClose: 4000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              toastId: 1,
+            });
+          } else {
+            this.setState({ newCourse: result });
+          }
         });
     } else {
       console.error("Duplicate Course Entered");
+      toast.error("Duplicate Course Entered.", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        toastId: 2,
+      });
     }
   }
 
