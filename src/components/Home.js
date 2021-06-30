@@ -16,8 +16,8 @@ const Home = () => {
       <br></br>
       <br></br>
       <p>
-        Data for courses and locations is being recieved from UWaterloo API,
-        more info avout the API can be found on:
+        Data for courses and locations is being received from UWaterloo API,
+        more info about the API can be found on:
         <a href="https://uwaterloo.ca/api/" target="_blank">
           https://uwaterloo.ca/api/
         </a>
