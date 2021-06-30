@@ -66,7 +66,7 @@ export default class CourseList extends React.Component {
       )
         .then((response) => response.json())
         .then((result) => {
-          console.log(result);
+          /*console.log(result);*/
           if (result.length === 0) {
             console.error("Invalid Course Given");
             toast.error("Invalid Course Given.", {
@@ -99,7 +99,7 @@ export default class CourseList extends React.Component {
   }
 
   handleDeleteDoctor(id) {
-    console.log(`TODO: Delete course with id ${id}`);
+    /*console.log(`TODO: Delete course with id ${id}`);*/
     const newCourseList = this.state.courses.filter(
       (course) => course.courseId !== id
     );

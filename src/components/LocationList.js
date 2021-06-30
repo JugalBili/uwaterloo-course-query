@@ -27,7 +27,7 @@ const LocationList = () => {
   });
   //var nullCode = grouped[null];
   //console.log(nullCode);
-  console.log(grouped);
+  /*console.log(grouped);*/
 
   const handleLocationChange = () => {
     var index = document.getElementById("location-type").value;

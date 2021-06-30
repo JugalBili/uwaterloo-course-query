@@ -10,7 +10,7 @@ const AddCourse = (props) => {
   };
 
   const handleAddCourse = () => {
-    console.log(courseName);
+    /*console.log(courseName);*/
     if (courseName === "") {
       console.error("Please enter valid course. Cannot be ''.");
       toast.error("Please enter valid course. Cannot be ' '.", {
