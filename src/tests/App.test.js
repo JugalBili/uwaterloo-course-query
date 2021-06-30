@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Home from "../components/Home";
 import AddCourse from "../components/AddCourse";
 import LocationDropdown from "../components/LocationDropdown";
-import { shallow } from "../../enzyme";
+import { shallow } from "./enzyme";
 
 test("render h2 elements", () => {
   render(<Home />);

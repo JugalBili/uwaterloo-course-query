@@ -40,7 +40,7 @@ function CourseListItem({ id, course, onDeleteCourse }) {
         </h3>
       </a>
       {/* <button onClick={handleDeleteCourse}>X</button> */}
-      <a className="delete" onClick={handleDeleteCourse}>
+      <a onClick={handleDeleteCourse}>
         <svg
           version="1.1"
           id="Capa_1"
